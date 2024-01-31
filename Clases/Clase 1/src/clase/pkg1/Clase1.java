@@ -25,12 +25,11 @@ public class Clase1 {
             Este es un comentario
             multilinea para nuestro primer ejemplo
          */
-        
         // Declarando variable de tipo entero
         int edad = 21;
         // Declarando variable de tipo double (decimal)
         double precio = 500.90;
-        System.out.println("Realizando casteo de decimal a entero: " + (int)precio);
+        System.out.println("Realizando casteo de decimal a entero: " + (int) precio);
         // Declarando variable de tipo float (decimal), se debe agregar la f al final para que java sepa que es de tipo flotante
         float precio1 = 34.5f;
         /*
@@ -127,8 +126,13 @@ public class Clase1 {
         // [false or true] or true => true or true = true
 
         // USANDO INPUT
-        System.out.println("Josué");
-        System.out.print("Ingrese el año actual: ");
+        // Limpiar la consola ejecutando el comando cls en Windows
+        try {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.print("Ingrese el a�o actual: ");
         // Obtener un entero por consola y guardarlo en una variable de tipo entera
         int year = sc.nextInt();
         System.out.println("------------------------------------");
