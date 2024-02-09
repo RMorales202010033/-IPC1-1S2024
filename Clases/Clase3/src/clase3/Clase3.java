@@ -45,7 +45,9 @@ public class Clase3 {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
+        // Instanceando ojbeto de tipo Tablero
         Tablero board = new Tablero();
+        // Imprimir tablero con método publico de nuestro objeto
         board.showBoard();
     }
 

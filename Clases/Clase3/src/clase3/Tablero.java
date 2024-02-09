@@ -8,17 +8,21 @@ import java.util.Random;
  */
 public class Tablero {
 
+    // Creación variables privadas de la clase (Estas variables no pueden ser accedidas por otras clases)
     private int[][] board = new int[8][8];
     private char symbol = '@';
     private char[][] penalties = new char[8][8];
     private int currentRow = 7;
     private int currentColumn = 0;
 
+    // Creación constructor que no recibe ningún parámetro
     public Tablero() {
+        // Ejecución funciones privadas de la clase, estas se ejecutan cuando se crea la instancia de un nuevo objeto
         boardPositionsImpares();
         penaltyPositions();
     }
 
+    // Función pública, esta función puede ser usada en otras clases media vez se tenga la instancia de un objeto de tipo Tablero
     public void showBoard() {
         // For encargado del manejo de filas
         for (int i = 0; i < board.length; i++) {
