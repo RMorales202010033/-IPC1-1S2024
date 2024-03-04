@@ -20,6 +20,7 @@ import javax.swing.plaf.ColorUIResource;
 public class Clase5 {
 
     static ArrayList<String[]> students = new ArrayList<>();
+    static ArrayList<String> materias = new ArrayList<>();
     static String[][] example_students = {
         {"202010033", "Rodolfo", "Morales", "jrodolfomc2002@gmail.com", "Masculino"},
         {"202010034", "Luisa", "Castillo", "luisac@gmail.com", "Femenino"},
@@ -37,6 +38,7 @@ public class Clase5 {
         for (String[] student : example_students) {
             students.add(student);
         }
+        addMaterias();
         LOGIN login = new LOGIN();
     }
 
@@ -55,6 +57,17 @@ public class Clase5 {
 
     public static void addStudent(String[] dataStudent) {
         students.add(dataStudent);
+    }
+    
+    public static void addMaterias(){
+        materias.add("IPC 1");
+        materias.add("IPC 2");
+        materias.add("LFP");
+        materias.add("Apli 1");
+        materias.add("Apli 3");
+        materias.add("Fisica 1");
+        materias.add("MC 2");
+        materias.add("Logica de sistemas");
     }
 }
 

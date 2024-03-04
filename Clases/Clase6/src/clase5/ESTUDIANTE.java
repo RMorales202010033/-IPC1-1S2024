@@ -3,6 +3,7 @@ package clase5;
 // Libraries
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.HeadlessException;
 import java.awt.Image;
@@ -44,9 +45,7 @@ public class ESTUDIANTE extends JFrame implements ActionListener, ChangeListener
     JPanel jp1, jp2, jp3, jp4;
     //Atributos para la tabla
     JTable tabla_oficial;
-    JScrollPane sp1;
-
-    boolean vb1 = true;
+    JScrollPane sp1, sp2;
 
     public ESTUDIANTE() {
         panel = new JTabbedPane(JTabbedPane.TOP);
@@ -55,7 +54,7 @@ public class ESTUDIANTE extends JFrame implements ActionListener, ChangeListener
         jp2 = new JPanel();
         jp2.setBackground(Color.yellow);
         jp2.setLayout(null);
-        panel.addTab("Tab 2", jp2);
+        panel.addTab("Materias", jp2);
         jp3 = new JPanel();
         jp3.setBackground(Color.yellow);
         jp3.setLayout(null);
@@ -167,7 +166,7 @@ public class ESTUDIANTE extends JFrame implements ActionListener, ChangeListener
         jp1.add(sp1);
         //LBL1
         lbl1 = new JLabel();
-        lbl1.setBounds(0, 0, 1364, 675);
+        lbl1.setBounds(0, 0, 1364, 1280);
         ImageIcon iprofesores = new ImageIcon(getClass().getResource("./Images/profesor.jpg"));
         Image imgEscalada = iprofesores.getImage().getScaledInstance(lbl1.getWidth(), lbl1.getHeight(), Image.SCALE_SMOOTH);
         Icon iconoEscalado = new ImageIcon(imgEscalada);
@@ -175,10 +174,58 @@ public class ESTUDIANTE extends JFrame implements ActionListener, ChangeListener
         lbl1.setVisible(true);
         jp1.add(lbl1);
 
-/////////////////////////////////////////////////// TAB2 //////////////////////////////////////////////////////////////////////////////////////////             
+/////////////////////////////////////////////////// Materias //////////////////////////////////////////////////////////////////////////////////////////             
+        // LBL5 
+        lbl5 = new JLabel("Materias");
+        lbl5.setBounds(25, 25, 1230, 50);
+        lbl5.setBorder(BorderFactory.createLineBorder(Color.black, 2));
+        this.lbl5.setBackground(Color.LIGHT_GRAY);
+        this.lbl5.setOpaque(true);
+        lbl5.setVerticalAlignment(SwingConstants.CENTER);
+        lbl5.setHorizontalAlignment(SwingConstants.CENTER);
+        lbl5.setFont(new Font(lbl4.getFont().getFontName(), Font.BOLD, 24));
+        Font font1 = lbl5.getFont();
+        Map attributes1 = font1.getAttributes();
+        attributes1.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        lbl5.setFont(font.deriveFont(attributes));
+        lbl5.setVisible(true);
+        jp2.add(lbl5);
+
+        // Paneles de materias de manera dinamica
+        JPanel jpScroll = new JPanel();
+        jpScroll.setLayout(null);
+        int x = 0, y = 0;
+        int scrollHeight = ((Clase5.materias.size() / 2) + 1) * 430;
+        boolean v1 = true;
+
+        for (int i = 0; i < Clase5.materias.size(); i++) {
+            MATERIA materiaTemp = new MATERIA(Clase5.materias.get(i));
+            if (v1) {
+                x = 0;
+            } else {
+                x = 620;
+            }
+
+            JPanel jpTemp = materiaTemp.getPanel();
+            jpTemp.setBounds(x, y, 590, 400);
+            jpTemp.setVisible(true);
+            jpScroll.add(jpTemp);
+            if (!v1) {
+                y += 430;
+            }
+            v1 = !v1;
+        }
+
+        jpScroll.setPreferredSize(new Dimension(1230, scrollHeight));
+        sp2 = new JScrollPane(jpScroll);
+        sp2.setBounds(25, 100, 1230, 750);
+        sp2.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        sp2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        jp2.add(sp2);
+
         //LBL2
         lbl2 = new JLabel();
-        lbl2.setBounds(0, 0, 1364, 675);
+        lbl2.setBounds(0, 0, 1364, 1280);
         ImageIcon icursos = new ImageIcon(getClass().getResource("./Images/cursos.jpg"));
         Image imgEscalada2 = icursos.getImage().getScaledInstance(lbl2.getWidth(), lbl2.getHeight(), Image.SCALE_SMOOTH);
         Icon iconoEscalado2 = new ImageIcon(imgEscalada2);
@@ -189,7 +236,7 @@ public class ESTUDIANTE extends JFrame implements ActionListener, ChangeListener
 ///////////////////////////////////////////// TAB3 //////////////////////////////////////////////////////////////////////////////////////////           
         //LBL3
         lbl3 = new JLabel();
-        lbl3.setBounds(0, 0, 1364, 675);
+        lbl3.setBounds(0, 0, 1364, 1280);
         ImageIcon ialumnos = new ImageIcon(getClass().getResource("./Images/alumnos.jpg"));
         Image imgEscalada3 = ialumnos.getImage().getScaledInstance(lbl3.getWidth(), lbl3.getHeight(), Image.SCALE_SMOOTH);
         Icon iconoEscalado3 = new ImageIcon(imgEscalada3);
