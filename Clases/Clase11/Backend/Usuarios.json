@@ -1,0 +1,42 @@
+[
+    {
+        "carnet": 202400000,
+        "nombre": "Admin",
+        "apellido": "IPC1",
+        "edad": 45,
+        "password": "1234",
+        "role": 0
+    },
+    {
+        "carnet": 202010033,
+        "nombre": "Rodolfo",
+        "apellido": "Morales",
+        "edad": 22,
+        "password": "1234",
+        "role": 1
+    },
+    {
+        "carnet": 202010025,
+        "nombre": "Cristian",
+        "apellido": "Oxlaj",
+        "edad": 23,
+        "password": "1234",
+        "role": 1
+    },
+    {
+        "carnet": 202011535,
+        "nombre": "Esteban",
+        "apellido": "Ennati",
+        "edad": 22,
+        "password": "1234",
+        "role": 1
+    },
+    {
+        "carnet": 202010223,
+        "nombre": "Angel",
+        "apellido": "Barrera",
+        "edad": 24,
+        "password": "1234",
+        "role": 1
+    }
+]

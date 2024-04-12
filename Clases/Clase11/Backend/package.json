@@ -1,0 +1,18 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "```node\r // Ver la versión actual de node\r node --version\r // Ver la versión actual de npm\r npm --version\r // Inicializar un nuevo proyecto de Node.js\r npm init -y\r // Instalación dependencias para el backend\r npm install express body-parser cors\r ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.1"
+  }
+}
